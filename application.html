@@ -114,6 +114,14 @@
       background:#fcfef9;
     }
 
+    .input-note{
+      display:block;
+      margin-top:8px;
+      font-size:13px;
+      color:#6b7280;
+      line-height:1.5;
+    }
+
     input:focus, select:focus, textarea:focus{
       border-color:var(--green);
       box-shadow:0 0 0 4px rgba(134,209,59,0.12);
@@ -202,6 +210,9 @@
           <div class="form-group">
             <label for="name">Full Name *</label>
             <input type="text" id="name" required>
+            <small class="input-note">
+              "Please enter your full name exactly as you want it to appear on the certificate."
+            </small>
           </div>
 
           <div class="form-group">
@@ -231,6 +242,15 @@
               <option value="Computer Science">Computer Science</option>
               <option value="BBA">BBA</option>
               <option value="Others">Others</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="medium">Medium *</label>
+            <select id="medium" required>
+              <option value="">Choose Medium</option>
+              <option value="English">English</option>
+              <option value="Tamil">Tamil</option>
             </select>
           </div>
 
@@ -267,7 +287,7 @@
   </div>
 
   <script>
-    const scriptURL = "https://script.google.com/macros/s/AKfycbwhdQI2cvfd7MJbbINsTluY8QSGEFZZynL4dVecXU3eOiIlIFjSGiHgaGenq7dP0lnEjw/exec";
+    const scriptURL = "https://script.google.com/macros/s/AKfycbyOmgdi_7hsjqUrhfl8vSpEkW6rUVjItc5wEmjq9toWWNJUJ3CDq6IOr6O3SjgoU_Tchg/exec";
     const form = document.getElementById("applicationForm");
     const submitBtn = document.getElementById("submitBtn");
     const responseMessage = document.getElementById("responseMessage");
@@ -308,6 +328,7 @@
           email: data.email,
           phone: data.phone,
           department: data.department,
+          medium: data.medium,
           college: data.college,
           internship: data.internship,
           message: data.message,
@@ -341,6 +362,7 @@
         email: document.getElementById("email").value.trim(),
         phone: document.getElementById("phone").value.trim(),
         department: finalDepartment,
+        medium: document.getElementById("medium").value,
         college: document.getElementById("college").value.trim(),
         internship: document.getElementById("internship").value,
         message: document.getElementById("message").value.trim()
