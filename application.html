@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply | SK GrowthTech Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    :root{
+      --dark:#111111;
+      --green:#86d13b;
+      --green-dark:#6fb42e;
+      --white:#ffffff;
+      --light:#f7f7f7;
+      --gray:#666666;
+      --border:#e8e8e8;
+      --shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    body{
+      background:linear-gradient(135deg,#ffffff 0%, #f5faef 100%);
+      color:var(--dark);
+      min-height:100vh;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:min(700px, 92%);
+      margin:auto;
+      padding:40px 0 70px;
+    }
+
+    .top-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:var(--green-dark);
+      font-weight:700;
+      margin-bottom:26px;
+    }
+
+    .apply-card{
+      background:#fff;
+      border:3.5px solid var(--border);
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .apply-header{
+      padding:35px 30px 20px;
+      text-align:center;
+      border-bottom:1px solid var(--border);
+      background:#fff;
+    }
+
+    .apply-header img{
+      width:135px;
+      height:auto;
+      object-fit:contain;
+      margin:0 auto 18px;
+      border-radius:16px;
+    }
+
+    .apply-header h1{
+      font-size:2.1rem;
+      margin-bottom:10px;
+      font-weight:800;
+    }
+
+    .apply-header p{
+      color:var(--gray);
+      line-height:1.8;
+      max-width:520px;
+      margin:auto;
+    }
+
+    .form-area{
+      padding:30px;
+    }
+
+    .form-group{
+      margin-bottom:18px;
+    }
+
+    label{
+      display:block;
+      font-weight:600;
+      margin-bottom:8px;
+      color:#222;
+    }
+
+    input, select, textarea{
+      width:100%;
+      padding:14px 16px;
+      border:1px solid #d9dfd2;
+      border-radius:14px;
+      font-size:15px;
+      outline:none;
+      transition:.3s;
+      background:#fcfef9;
+    }
+
+    input:focus, select:focus, textarea:focus{
+      border-color:var(--green);
+      box-shadow:0 0 0 4px rgba(134,209,59,0.12);
+    }
+
+    textarea{
+      min-height:120px;
+      resize:vertical;
+    }
+
+    button{
+      width:100%;
+      border:none;
+      background:var(--green);
+      color:#111;
+      padding:16px;
+      border-radius:14px;
+      font-size:16px;
+      font-weight:700;
+      cursor:pointer;
+      transition:.3s;
+    }
+
+    button:hover{
+      background:var(--green-dark);
+      color:#fff;
+    }
+
+    .message{
+      margin-top:18px;
+      padding:14px;
+      border-radius:14px;
+      display:none;
+      font-weight:600;
+      text-align:center;
+    }
+
+    .success{
+      background:#effbdd;
+      color:#4b7f18;
+      border:1px solid #d8efbe;
+    }
+
+    .error{
+      background:#fff2f2;
+      color:#b42318;
+      border:1px solid #f6caca;
+    }
+
+    .loading{
+      opacity:.7;
+      pointer-events:none;
+    }
+
+    #otherDepartmentGroup{
+      display:none;
+    }
+
+    @media (max-width:600px){
+      .apply-header h1{
+        font-size:1.75rem;
+      }
+
+      .apply-header,
+      .form-area{
+        padding:22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="top-link">← Back to Home</a>
+
+    <div class="apply-card">
+      <div class="apply-header">
+        <img src="SK letter logo.jpg" alt="SK GrowthTech Logo">
+        <h1>Apply for Internship</h1>
+        <p>
+          Fill in your details below to apply for the internship program at SK GrowthTech Solutions.
+        </p>
+      </div>
+
+      <div class="form-area">
+        <form id="applicationForm">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" required>
+          </div>
+
+          <div class="form-group">
+            <label for="department">Select Department *</label>
+            <select id="department" required>
+              <option value="">Choose Department</option>
+              <option value="Tamil">Tamil</option>
+              <option value="English">English</option>
+              <option value="Mathematics">Mathematics</option>
+              <option value="History">History</option>
+              <option value="Physics">Physics</option>
+              <option value="Chemistry">Chemistry</option>
+              <option value="Economics">Economics</option>
+              <option value="Foods & Nutrition">Foods & Nutrition</option>
+              <option value="Commerce">Commerce</option>
+              <option value="Zoology">Zoology</option>
+              <option value="Computer Science">Computer Science</option>
+              <option value="BBA">BBA</option>
+              <option value="Others">Others</option>
+            </select>
+          </div>
+
+          <div class="form-group" id="otherDepartmentGroup">
+            <label for="otherDepartment">Enter Your Department *</label>
+            <input type="text" id="otherDepartment" placeholder="Type your department">
+          </div>
+
+          <div class="form-group">
+            <label for="college">College Name *</label>
+            <input type="text" id="college" required>
+          </div>
+
+          <div class="form-group">
+            <label for="internship">Select Internship *</label>
+            <select id="internship" required>
+              <option value="">Choose Internship</option>
+              <option value="Digital Marketing Internship">Digital Marketing Internship</option>
+              <option value="Web Development Internship">Web Development Internship</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Why do you want to join?</label>
+            <textarea id="message"></textarea>
+          </div>
+
+          <button type="submit" id="submitBtn">Submit Application</button>
+        </form>
+
+        <div id="responseMessage" class="message"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwhdQI2cvfd7MJbbINsTluY8QSGEFZZynL4dVecXU3eOiIlIFjSGiHgaGenq7dP0lnEjw/exec";
+    const form = document.getElementById("applicationForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const responseMessage = document.getElementById("responseMessage");
+
+    const departmentSelect = document.getElementById("department");
+    const otherDepartmentGroup = document.getElementById("otherDepartmentGroup");
+    const otherDepartmentInput = document.getElementById("otherDepartment");
+
+    departmentSelect.addEventListener("change", function () {
+      if (this.value === "Others") {
+        otherDepartmentGroup.style.display = "block";
+        otherDepartmentInput.setAttribute("required", "true");
+      } else {
+        otherDepartmentGroup.style.display = "none";
+        otherDepartmentInput.removeAttribute("required");
+        otherDepartmentInput.value = "";
+      }
+    });
+
+    function showMessage(text, type) {
+      responseMessage.textContent = text;
+      responseMessage.className = "message " + type;
+      responseMessage.style.display = "block";
+    }
+
+    function submitToGoogleSheet(data) {
+      return new Promise((resolve, reject) => {
+        const callbackName = "jsonpCallback_" + Date.now();
+
+        window[callbackName] = function(response) {
+          resolve(response);
+          delete window[callbackName];
+          script.remove();
+        };
+
+        const params = new URLSearchParams({
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          department: data.department,
+          college: data.college,
+          internship: data.internship,
+          message: data.message,
+          callback: callbackName
+        });
+
+        const script = document.createElement("script");
+        script.src = scriptURL + "?" + params.toString();
+
+        script.onerror = function() {
+          reject(new Error("Script load failed"));
+          delete window[callbackName];
+          script.remove();
+        };
+
+        document.body.appendChild(script);
+      });
+    }
+
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const selectedDepartment = departmentSelect.value;
+      const otherDepartment = otherDepartmentInput.value.trim();
+
+      const finalDepartment =
+        selectedDepartment === "Others" ? otherDepartment : selectedDepartment;
+
+      const formData = {
+        name: document.getElementById("name").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        phone: document.getElementById("phone").value.trim(),
+        department: finalDepartment,
+        college: document.getElementById("college").value.trim(),
+        internship: document.getElementById("internship").value,
+        message: document.getElementById("message").value.trim()
+      };
+
+      submitBtn.textContent = "Submitting...";
+      submitBtn.classList.add("loading");
+      responseMessage.style.display = "none";
+      responseMessage.className = "message";
+
+      try {
+        const result = await submitToGoogleSheet(formData);
+
+        if (result.status === "success") {
+          showMessage("Application submitted successfully!", "success");
+          form.reset();
+          otherDepartmentGroup.style.display = "none";
+        } else {
+          showMessage("Submission failed: " + result.message, "error");
+        }
+      } catch (error) {
+        showMessage("Error: Unable to submit application.", "error");
+      }
+
+      submitBtn.textContent = "Submit Application";
+      submitBtn.classList.remove("loading");
+    });
+  </script>
+</body>
+</html>
