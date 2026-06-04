@@ -522,6 +522,53 @@
       gap:25px;
     }
 
+    .founder-card{
+      display:flex;
+      align-items:center;
+      gap:40px;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:25px;
+      padding:40px;
+      box-shadow:var(--shadow);
+    }
+    
+    .founder-card img{
+      width:280px;
+      height:280px;
+      object-fit:cover;
+      border-radius:20px;
+    }
+    
+    .founder-content h3{
+      font-size:2rem;
+      margin-bottom:8px;
+    }
+    
+    .founder-content span{
+      color:var(--green-dark);
+      font-weight:700;
+      display:block;
+      margin-bottom:20px;
+    }
+    
+    .founder-content p{
+      color:var(--gray);
+      line-height:1.8;
+    }
+    
+    @media(max-width:768px){
+      .founder-card{
+        flex-direction:column;
+        text-align:center;
+      }
+    
+      .founder-card img{
+        width:220px;
+        height:220px;
+      }
+    }
+
     .contact-box{
       background:#fff;
       border:1px solid var(--border);
@@ -649,6 +696,7 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#internships">Internships</a></li>
+        <li><a href="#founder">Founder</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="application.html" class="apply-nav">Apply</a></li>
       </ul>
@@ -750,6 +798,32 @@
             <li>Experience in building modern web pages</li>
           </ul>
           <a href="application.html" class="apply-card-btn">Apply Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="founder">
+    <div class="container">
+      <h2 class="section-title">Meet Our Founder</h2>
+      <p class="section-subtitle">
+        The vision behind SK GrowthTech Solutions.
+      </p>
+  
+      <div class="founder-card">
+        <img src="founder.jpg" alt="Founder">
+  
+        <div class="founder-content">
+          <h3>Mr. SELVAKUMAR D</h3>
+          <span>Founder & Chief Executive Officer</span>
+  
+          <p>
+            Selokumar founded SK GrowthTech Solutions with a vision to bridge
+            the gap between academic learning and industry requirements.
+            The organization focuses on providing practical internship
+            opportunities, skill development programs, and career guidance
+            to help students become industry-ready professionals.
+          </p>
         </div>
       </div>
     </div>
