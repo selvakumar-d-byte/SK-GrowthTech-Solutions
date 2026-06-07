@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ID Card Upload | SK GrowthTech Solutions</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    :root{
+      --dark:#111;
+      --green:#86d13b;
+      --green-dark:#6fb42e;
+      --gray:#666;
+      --border:#e8e8e8;
+      --shadow:0 10px 30px rgba(0,0,0,0.08);
+      --warning-bg:#fff9e9;
+      --warning-border:#f1d98c;
+      --warning-text:#7a5a00;
+    }
+
+    body{
+      background:linear-gradient(135deg,#fff 0%, #f5faef 100%);
+    }
+
+    .container{
+      max-width:900px;
+      margin:auto;
+      padding:40px 20px;
+    }
+
+    /* 🔥 ONLY TOP LOGO HEADER */
+    .main-header{
+      text-align:center;
+      margin-bottom:35px;
+    }
+
+    .main-header img{
+      width:140px;
+      margin-bottom:10px;
+    }
+
+    .main-header h1{
+      font-size:1.8rem;
+      font-weight:800;
+    }
+
+    .upload-card{
+      background:#fff;
+      border:3px solid var(--border);
+      border-radius:25px;
+      box-shadow:var(--shadow);
+      margin-bottom:25px;
+      overflow:hidden;
+    }
+
+    .form-area{
+      padding:25px;
+    }
+
+    .note{
+      background:var(--warning-bg);
+      border:1px solid var(--warning-border);
+      padding:14px;
+      border-radius:12px;
+      margin-bottom:18px;
+      font-size:13px;
+    }
+
+    .student-info-card{
+      background:#f9fbf6;
+      border:1px solid #e3eadb;
+      padding:18px;
+      border-radius:15px;
+      margin-bottom:18px;
+    }
+
+    .student-info-card h2{
+      font-size:1.2rem;
+      margin-bottom:10px;
+    }
+
+    .student-detail{
+      font-size:14px;
+      color:var(--gray);
+      margin:5px 0;
+    }
+
+    .upload-group{
+      margin-bottom:15px;
+    }
+
+    .upload-group label{
+      font-weight:600;
+      font-size:13px;
+      display:block;
+      margin-bottom:8px;
+    }
+
+    input[type="file"]{
+      width:100%;
+      padding:12px;
+      border:2px solid #ddd;
+      border-radius:12px;
+    }
+
+    .submit-btn{
+      width:100%;
+      padding:15px;
+      background:var(--green);
+      border:none;
+      font-weight:700;
+      border-radius:12px;
+      cursor:pointer;
+      margin-top:15px;
+    }
+
+    .submit-btn:hover{
+      background:var(--green-dark);
+      color:#fff;
+    }
+
+    .message{
+      margin-top:15px;
+      padding:12px;
+      display:none;
+      border-radius:10px;
+      font-weight:600;
+      text-align:center;
+    }
+
+    .success{ background:#eaffea; color:#2d7a2d; }
+    .error{ background:#ffeaea; color:#b30000; }
+
+    .completed-card{
+      border:3px solid var(--green);
+      background:#effbdd;
+    }
+
+    .completed-badge{
+      background:var(--green);
+      padding:6px 12px;
+      border-radius:10px;
+      font-weight:700;
+      position:absolute;
+      top:10px;
+      right:10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- 🔥 ONLY ONE LOGO HERE -->
+  <div class="main-header">
+    <img src="SK letter logo.jpg" alt="Logo">
+    <h1>ID Card Upload System</h1>
+    <h2>Digital Nutritionist Accelerator Program</h2>
+  </div>
+
+  <!-- STUDENT 1 -->
+  <div class="upload-card" id="student-1-card">
+    <div class="form-area">
+
+      <div class="student-info-card">
+        <h2>👤 NAVEENRAJ L</h2>
+        <div class="student-detail">📱 9384507459</div>
+        <div class="student-detail">✉️ ramuyuvaraj0@gmail.com</div>
+      </div>
+      <h3 style="padding-bottom: 20px ;">College ID card photo</h3>
+      <label>Front side ID *</label>
+      <input type="file" id="student-1-front">
+
+      <label>Back side ID *</label>
+      <input type="file" id="student-1-back">
+
+      <button class="submit-btn" onclick="submitStudent(1)">Submit</button>
+      <div class="message" id="student-1-message"></div>
+
+    </div>
+  </div>
+
+  <!-- STUDENT 2 -->
+  <div class="upload-card" id="student-2-card">
+    <div class="form-area">
+
+      <div class="student-info-card">
+        <h3>👤 Sridhar M</h3>
+        <div class="student-detail">📱 7604954903</div>
+        <div class="student-detail">✉️ smileysridhar167@gmail.com</div>
+      </div>
+
+      <label>Front side ID *</label>
+      <input type="file" id="student-2-front">
+
+      <label>Back side ID *</label>
+      <input type="file" id="student-2-back">
+
+      <button class="submit-btn" onclick="submitStudent(2)">Submit</button>
+      <div class="message" id="student-2-message"></div>
+
+    </div>
+  </div>
+
+  <!-- STUDENT 3 -->
+  <div class="upload-card" id="student-3-card">
+    <div class="form-area">
+
+      <div class="student-info-card">
+        <h3>👤 PAVITHRA V</h3>
+        <div class="student-detail">📱 7904043771</div>
+        <div class="student-detail">✉️ V3pavi@gmail.com</div>
+      </div>
+
+      <label>Front side ID *</label>
+      <input type="file" id="student-3-front">
+
+      <label>Back side ID *</label>
+      <input type="file" id="student-3-back">
+
+      <button class="submit-btn" onclick="submitStudent(3)">Submit</button>
+      <div class="message" id="student-3-message"></div>
+
+    </div>
+  </div>
+
+  <!-- STUDENT 4 -->
+  <div class="upload-card" id="student-3-card">
+    <div class="form-area">
+
+      <div class="student-info-card">
+        <h3>👤 DHINESH D</h3>
+        <div class="student-detail">📱 9042900504</div>
+        <div class="student-detail">✉️ dhinesh904290@gmail.com</div>
+      </div>
+
+      <label>Front side ID *</label>
+      <input type="file" id="student-3-front">
+
+      <label>Back side ID *</label>
+      <input type="file" id="student-3-back">
+
+      <button class="submit-btn" onclick="submitStudent(3)">Submit</button>
+      <div class="message" id="student-3-message"></div>
+
+    </div>
+  </div>
+
+  <!-- STUDENT 5 -->
+  <div class="upload-card" id="student-3-card">
+    <div class="form-area">
+
+      <div class="student-info-card">
+        <h3>👤 Devendran B</h3>
+        <div class="student-detail">📱 6379739313</div>
+        <div class="student-detail">✉️ devadr02@gmail.com</div>
+      </div>
+
+      <label>Front side ID *</label>
+      <input type="file" id="student-3-front">
+
+      <label>Back side ID *</label>
+      <input type="file" id="student-3-back">
+
+      <button class="submit-btn" onclick="submitStudent(3)">Submit</button>
+      <div class="message" id="student-3-message"></div>
+
+    </div>
+  </div>
+
+
+
+</div>
+
+<script>
+function toBase64(file){
+  return new Promise((resolve,reject)=>{
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result.split(",")[1]);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+const students = {
+  1: "Arun",
+  2: "Priya",
+  3: "Rajesh"
+};
+
+async function submitStudent(id){
+
+  const front = document.getElementById(`student-${id}-front`).files[0];
+  const back = document.getElementById(`student-${id}-back`).files[0];
+
+  if(!front || !back){
+    alert("Please upload both files");
+    return;
+  }
+
+  const btn = document.querySelector(`#student-${id}-card .submit-btn`);
+  btn.innerText = "Uploading...";
+  btn.disabled = true;
+
+  const frontBase64 = await toBase64(front);
+  const backBase64 = await toBase64(back);
+
+  fetch("https://script.google.com/macros/s/AKfycbwJ8G5eZ5LirY9l6zNeePEDwQ_CAEX9Whq8cjasFrHLcVs7XI7WmO5CuhXaFalHp8gn/exec", {
+    method: "POST",
+    body: JSON.stringify({
+        name: students[id],
+        front: frontBase64,
+        back: backBase64,
+        frontType: front.type.split("/")[1],
+        backType: back.type.split("/")[1]
+    })
+    })
+  .then(res => res.text())
+  .then(data => {
+    if(data === "success"){
+      btn.innerText = "Submitted";
+      alert("✅ Uploaded to Google Drive");
+    } else {
+      alert("❌ Upload failed");
+      btn.innerText = "Submit";
+      btn.disabled = false;
+    }
+  });
+
+}
+</script>
+
+</body>
+</html>
